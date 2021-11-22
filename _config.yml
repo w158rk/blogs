@@ -1,70 +1,50 @@
-# Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
-
 # Site
-title: 胡伟煌 
+title: 王瑞凯
 subtitle: 个人博客
-author: 胡伟煌
-language:
-timezone:
+author: 王瑞凯
+language: zh
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://www.huweihuang.com/       # Note: don't forget to modify the CNAME file to your url
-root: /
+url: http://home.ustc.edu.cn/~wrk15835/blog
+root: /~wrk15835/blog
 #permalink: :year/:month/:day/:title/
 permalink: :category/:title/
 permalink_defaults:
   lang: en
 
-#Custom Setting Start
+# -------------------------------------------------------------------------
+# Custom Setting Start
 
-# Site settings
-SEOTitle: 胡伟煌 | Blog
-email: e-mail_address
+## Site settings
+SEOTitle: 王瑞凯 | Blog
+email: wrk15835@outlook.com
 description: ""
 keyword: ""
 header-img: /img/header_img/home.jpg
 article-img: /img/article_header/article_bg.jpg
 404-img: /img/header_img/404.png
 signature: false #show signature
-signature-img: img/signature/BeanTechSign-white.png 
+signature-img: /img/signature/BeanTechSign-white.png
 
 
 # SNS settings
-# RSS: false
+RSS: true
 # weibo_username:     Demonbaneen
 # zhihu_username:     Demonbane
-github_username:    huweihuang
+github_username:    w158rk
 # twitter_username:   Demonbane_x
 # facebook_username:  xxx
 # linkedin_username:  xxx
 
 # Build settings
+# 是一个在md文件上加锚/链接的库
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
-
-
-# Disqus settings
-#disqus_username: your-disqus-ID
-
-# Duoshuo settings
-# duoshuo_username: kaijun
-# Share component is depend on Comment so we can NOT use share only.
-#duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-
-
-# Analytics settings
-#Baidu Analytics
-ba_track_id: xxx
-# Google Analytics
-ga_track_id: 'UA-XXXXXXXX-X'          # Format: UA-xxxxxx-xx
-ga_domain: yoursite
-
 
 # Sidebar settings
 sidebar: true                       # whether or not using Sidebar.
-sidebar-about-description: "Stay hungry,Stay foolish"
+sidebar-about-description: ""
 sidebar-avatar: /img/avatar/ironman.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 widgets:
 - featured-tags
@@ -72,7 +52,7 @@ widgets:
 - recent-posts
 - friends-blog
 - archive
-#- category
+# - category
 
 # widget behavior
 ## Archive
@@ -80,31 +60,20 @@ archives-img: /img/header_img/archives-widget.jpg
 archive_type: 'monthly'
 show_count: true
 
-
 ## Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 0              # A tag will be featured if the size of it is more than this condition value
 
-
 ## Friends
 friends: [
     {
-        title: "CSDN Blog 胡伟煌",
-        href: "http://blog.csdn.net/huwh_"
-    },
-    {
-        title: "DockOne 胡伟煌",
-        href: "http://dockone.io/people/胡伟煌"
-    },
-    {
-        title: "阿里云栖社区 胡伟煌",
-        href: "https://yq.aliyun.com/u/huweihuang"
+        title: "中科大计算机学院",
+        href: "http://cs.ustc.edu.cn"
     }
 ]
 
-
+#--------------------------------------------------------------------------
 #Custom Setting End
-
 
 
 # Directory
@@ -135,13 +104,9 @@ highlight:
 
 # Category & Tag
 default_category: article
-category_map:
-  Docker: docker
-  Kubernetes: kubernetes
-  Golang: golang
-  Nginx: nginx
-  Etcd: etcd
-  Database: database
+# category_map:
+#   Cryptography: cryptography
+#   Daily: daily
 
 tag_map:
 home_posts_tag: true # show posts tags
@@ -163,7 +128,16 @@ archive_generator:
   yearly: true
   monthly: true
   daily: false
-  
+
+# kramed:
+#   gfm: true
+#   pedantic: false
+#   sanitize: false
+#   tables: true
+#   breaks: true
+#   smartLists: true
+#   smartypants: true
+
 # Markdown-it config
 ## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
 markdown:
@@ -174,7 +148,7 @@ markdown:
     linkify: true
     typographer: true
     quotes: '“”‘’'
-  
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 
@@ -195,13 +169,13 @@ markdown:
 
 # MeingJS support for Aplayer
 # reference: https://github.com/metowolf/MetingJS & https://github.com/MoePlayer/APlayer
-metingjs: false
-data-id: 2423410161
-data-server: netease  
-data-type: playlist
-data-fixed: true
+# metingjs: false
+# data-id: 2423410161
+# data-server: netease
+# data-type: playlist
+# data-fixed: true
   # data-mini:
-  # data-autoplay:    
+  # data-autoplay:
 
 # Reward
 reward: false
@@ -211,7 +185,7 @@ alipay: alipay_url
 
 # Share
 # Reference: https://github.com/overtrue/share.js
-share: true
+# share: true
 
 # Reference: https://github.com/YuyingWu/hexo-generator-index-plus
 index_generator_plus:
@@ -230,7 +204,20 @@ sitemap:
 # repository: https://github.com/huweihuang/xxxxxxx.github.io.git
 # branch: master
 deploy:
-  type: git
-  repository: https://github.com/huweihuang/hexo-theme-huweihuang
-  branch: gh-pages
-  message: Update CNAME
+  type: ftpsync
+  host: home.ustc.edu.cn
+  user: wrk15835
+  pass: wrk3777.
+  remote: /public_html
+  verbose: true
+  connections: 10
+
+# RSS
+feed:
+  type: atom
+  path: feed.xml
+  limit: 20
+  hub:
+  content:
+  content_limit:
+  content_limit_delim: ' '

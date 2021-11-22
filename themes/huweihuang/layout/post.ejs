@@ -10,8 +10,7 @@ layout: layout
 
             <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
+                col-md-11
                 post-container">
 
                 <%- page.content %>
@@ -78,7 +77,7 @@ layout: layout
                         data-thread-key="<%= page.path %>"
                         data-title="<%= page.title %>"
                         data-url="<%= page.permalink %>"
-                        data-images="<%= page["header-img"] ? page.permalink + page["header-img"] : '' %>"
+                        data-images="<%= config.root%><%= page["header-img"] ? page.permalink + page["header-img"] : '' %>"
                         data-content="<%- truncate(strip_html(page.content), {length: 50, omission: '...'}) %> | <%= config.SEOTitle %> " >
                         <div class="ds-share-inline">
                           <ul  class="ds-share-icons-16">
